@@ -17,6 +17,27 @@ public class MemberMenu {
 	private Scanner sc = new Scanner(System.in);
 	MemberManager mm = new MemberManager();
 		public void mainMenu(){
+			
+			do {
+				System.out.println("========== 회원 관리 메뉴 ==========");
+				System.out.println("1. 신규 회원 등록");
+				System.out.println("2. 회원 정보 검색");
+				System.out.println("3. 회원 정보 수정");
+				System.out.println("4. 회원 정보 삭제");
+				System.out.println("5. 회원 정보 출력");
+				System.out.println("9. 종료");
+				System.out.println("====================================");
+				System.out.println("메뉴 번호를 입력하세요 :");
+				int forSwitch = sc.nextInt();
+				switch(forSwitch) {
+				case 1 :mm.insertMember(); break;
+				case 2 :mm.searchMemberMenu(); break;
+				case 3 :mm.updateMemberMenu(); break;
+				case 4 :mm.deleteMemberMenu(); break;
+				case 5 :mm.printAllMember(); break;
+				case 9 :System.out.println("프로그램을 종료합니다."); return;
+				}
+			}while(true);
 			/*//메뉴는 반복 출력되게 함
 			<실행화면>
 			========== 회원 관리 메뉴 ==========
@@ -39,9 +60,15 @@ public class MemberMenu {
 			  9번 선택시 >> System.out.println("프로그램을 종료합니다."); return; //종료함
 		}
 
+		
+		
+		}
+		
+*/
+		}
 		public void searchMemberMenu(){
 			//메뉴는 반복 출력되게 함
-			<실행화면>
+			/*<실행화면>
 			========== 회원 정보 검색 ==========
 			1. 아이디로 검색하기
 			2. 이름으로 검색하기
@@ -54,12 +81,11 @@ public class MemberMenu {
 			  1번 선택시 >> MemberManager의 searchId() 실행
 			  2번 선택시 >> MemberManager의 searchName()실행
 			  3번 선택시 >> MemberManager의 searchEmail()실행
-			  9번 선택시 >> System.out.println("메인메뉴로 이동합니다."); return; //메인메뉴로 돌아감
-		
-		}
+			  9번 선택시 >> System.out.println("메인메뉴로 이동합니다."); return; //메인메뉴로 돌아감*/
+			  }
 		public void updateMemberMenu(){
 			//메뉴는 반복 출력되게 함
-			<실행화면>
+			/*<실행화면>
 			========== 회원 정보 수정 ==========
 			1. 비밀번호 수정하기
 			2. 이름 수정하기
@@ -73,8 +99,8 @@ public class MemberMenu {
 			  2번 입력시 >> MemberManager의 updateName() 실행
 			  3번 입력시 >> MemberManager의 updateEmail() 실행
 			  9번 입력시 >> System.out.println("메인메뉴로 이동합니다."); return;  //메인메뉴로 돌아감
-*/
-		}
+*/		
+			}
 		public void deleteMemberMenu(){
 			//메뉴는 반복 출력되게 함
 			/*<실행화면>

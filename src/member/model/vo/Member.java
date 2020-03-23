@@ -20,8 +20,13 @@ public class Member {
 	private char gender;
 	private String email;
 	public Member() {}
-	public Member(String userId , String userPwd) {
-		
+	public Member(String userId , String userPwd , String userName , int age , char gender , String email) {
+		this.userId = userId;
+		this.userPwd = userPwd;
+		this.userName = userName;
+		this.age = age;
+		this.gender = gender;
+		this.email= email;
 	}
 	public Member(int age , char gender) {
 		

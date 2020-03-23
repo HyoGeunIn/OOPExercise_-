@@ -31,9 +31,9 @@ public class MemberMenu {
 				int forSwitch = sc.nextInt();
 				switch(forSwitch) {
 				case 1 :mm.insertMember(); break;
-				case 2 :mm.searchMemberMenu(); break;
-				case 3 :mm.updateMemberMenu(); break;
-				case 4 :mm.deleteMemberMenu(); break;
+				case 2 :searchMemberMenu(); break;
+				case 3 :updateMemberMenu(); break;
+				case 4 :deleteMemberMenu(); break;
 				case 5 :mm.printAllMember(); break;
 				case 9 :System.out.println("프로그램을 종료합니다."); return;
 				}

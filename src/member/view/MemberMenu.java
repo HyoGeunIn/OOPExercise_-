@@ -78,13 +78,13 @@ public class MemberMenu {
 				System.out.println("메뉴 번호를 입력하세요 :");
 				int forSwitch = sc.nextInt();
 				switch(forSwitch) {
-				case 1 :mm.insertMember(); break;
-				case 2 :searchMemberMenu(); break;
-				case 3 :updateMemberMenu(); break;
-				case 4 :deleteMemberMenu(); break;
-				case 5 :mm.printAllMember(); break;
-				case 9 :System.out.println("프로그램을 종료합니다."); return;
+				case 1 :mm.searchId(); break;
+				case 2 :mm.searchName(); break;
+				case 3 :updateMemberMenu(); break;				
+				case 9 :System.out.println("메인메뉴로 이동합니다."); return;
+				}
 			}while(true);
+			
 			//메뉴는 반복 출력되게 함
 			/*<실행화면>
 			========== 회원 정보 검색 ==========

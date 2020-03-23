@@ -38,7 +38,7 @@ public class MemberMenu {
 				case 9 :System.out.println("프로그램을 종료합니다."); return;
 				}
 			}while(true);
-			/*//메뉴는 반복 출력되게 함
+			/*//메뉴는 반복 출력되게 함dd
 			<실행화면>
 			========== 회원 관리 메뉴 ==========
 			1. 신규 회원 등록

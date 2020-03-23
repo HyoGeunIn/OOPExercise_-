@@ -67,6 +67,24 @@ public class MemberMenu {
 */
 		}
 		public void searchMemberMenu(){
+			
+			do {
+				System.out.println("========== 회원 정보 검색 ==========");
+				System.out.println("1. 아이디로 검색하기");
+				System.out.println("2. 이름으로 검색하기");
+				System.out.println("3. 이메일로 검색하기");				
+				System.out.println("9. 메인메뉴로");
+				System.out.println("====================================");
+				System.out.println("메뉴 번호를 입력하세요 :");
+				int forSwitch = sc.nextInt();
+				switch(forSwitch) {
+				case 1 :mm.insertMember(); break;
+				case 2 :searchMemberMenu(); break;
+				case 3 :updateMemberMenu(); break;
+				case 4 :deleteMemberMenu(); break;
+				case 5 :mm.printAllMember(); break;
+				case 9 :System.out.println("프로그램을 종료합니다."); return;
+			}while(true);
 			//메뉴는 반복 출력되게 함
 			/*<실행화면>
 			========== 회원 정보 검색 ==========

@@ -31,9 +31,9 @@ public class MemberMenu {
 				int forSwitch = sc.nextInt();
 				switch(forSwitch) {
 				case 1 :mm.insertMember(); break;
-				case 2 :mm.searchMemberMenu(); break;
-				case 3 :mm.updateMemberMenu(); break;
-				case 4 :mm.deleteMemberMenu(); break;
+				case 2 :searchMemberMenu(); break;
+				case 3 :updateMemberMenu(); break;
+				case 4 :deleteMemberMenu(); break;
 				case 5 :mm.printAllMember(); break;
 				case 9 :System.out.println("프로그램을 종료합니다."); return;
 				}
@@ -67,6 +67,24 @@ public class MemberMenu {
 */
 		}
 		public void searchMemberMenu(){
+			
+			do {
+				System.out.println("========== 회원 정보 검색 ==========");
+				System.out.println("1. 아이디로 검색하기");
+				System.out.println("2. 이름으로 검색하기");
+				System.out.println("3. 이메일로 검색하기");				
+				System.out.println("9. 메인메뉴로");
+				System.out.println("====================================");
+				System.out.println("메뉴 번호를 입력하세요 :");
+				int forSwitch = sc.nextInt();
+				switch(forSwitch) {
+				case 1 :mm.searchId(); break;
+				case 2 :mm.searchName(); break;
+				case 3 :mm.searchEmail(); break;				
+				case 9 :System.out.println("메인메뉴로 이동합니다."); return;
+				}
+			}while(true);
+			
 			//메뉴는 반복 출력되게 함
 			/*<실행화면>
 			========== 회원 정보 검색 ==========
@@ -84,6 +102,22 @@ public class MemberMenu {
 			  9번 선택시 >> System.out.println("메인메뉴로 이동합니다."); return; //메인메뉴로 돌아감*/
 			  }
 		public void updateMemberMenu(){
+			do {
+				System.out.println("========== 회원 정보 수정 ==========");
+				System.out.println("1. 비밀번호 수정하기");
+				System.out.println("2. 이름 수정하기");
+				System.out.println("3. 이메일 수정하기");				
+				System.out.println("9. 메인메뉴로");
+				System.out.println("====================================");
+				System.out.println("메뉴 번호를 입력하세요 :");
+				int forSwitch = sc.nextInt();
+				switch(forSwitch) {
+				case 1 :mm.updatePwd(); break;
+				case 2 :mm.updateName(); break;
+				case 3 :mm.updateEmail(); break;				
+				case 9 :System.out.println("메인메뉴로 이동합니다."); return;
+				}
+			}while(true);
 			//메뉴는 반복 출력되게 함
 			/*<실행화면>
 			========== 회원 정보 수정 ==========
@@ -102,6 +136,20 @@ public class MemberMenu {
 */		
 			}
 		public void deleteMemberMenu(){
+			do {
+				System.out.println("========== 회원 정보 수정 ==========");
+				System.out.println("1. 회원 삭제");
+				System.out.println("2. 전체 회원 삭제");				
+				System.out.println("9. 메인메뉴로");
+				System.out.println("====================================");
+				System.out.println("메뉴 번호를 입력하세요 :");
+				int forSwitch = sc.nextInt();
+				switch(forSwitch) {
+				case 1 :mm.deleteOne(); break;
+				case 2 :mm.deleteAll(); break;				
+				case 9 :System.out.println("메인메뉴로 이동합니다."); return;
+				}
+			}while(true);
 			//메뉴는 반복 출력되게 함
 			/*<실행화면>
 			=========== 회원 정보 삭제 ===========

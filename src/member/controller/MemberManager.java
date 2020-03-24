@@ -20,7 +20,7 @@ public class MemberManager {
 		// 입력 받은 정보를 Member클래스의 매개변수 있는 생성자를 사용해 객체 생성 후 배열에 저장
 		// 인덱스와 회원수 증가시킴
 		// "입력이 완료되었습니다. 메인 메뉴로 돌아갑니다." 출력 후 메인메뉴로 돌아감
-
+		
 		System.out.println("아이디 입력 : ");
 		String userId = sc.nextLine();
 		System.out.println("패스워드 입력 : ");
@@ -105,12 +105,12 @@ public class MemberManager {
 		// 수정하려는 회원이 없는 경우 "수정할 회원이 존재하지 않습니다." 출력 후 메인 메뉴로 돌아감.
 		System.out.println("수정할 회원의 아이디를 입력하세요 : ");
 		String userId = sc.nextLine();
-		int num = -1;
+		int num = 0;
 		for (int i = 0; i <ctn; i++) {
 			if (userId.equals(m[i].getUserId())) {
-				num++;
+				break;
 
-			}
+			}num++;
 
 		}
 		if (num >= 0) {
@@ -130,13 +130,12 @@ public class MemberManager {
 		// 비밀번호 변경과 동일함 (수정할 정보는 변경할 이름을 입력받아 setter로 변경한다.)
 		System.out.println("수정할 회원의 아이디를 입력하세요 : ");
 		String userId = sc.nextLine();
-		int num = -1;
+		int num = 0;
 		for (int i = 0; i < ctn; i++) {
 			if (userId.equals(m[i].getUserId())) {
-				num++;
-
-			}
-
+				break;
+			}else {}
+			++num;
 		}
 		if (num >= 0) {
 			System.out.println("변경할 이름 입력");
@@ -155,12 +154,12 @@ public class MemberManager {
 		// 비밀번호 변경과 동일함 (수정할 정보는 변경할 이메일 주소를 입력받아 setter로 변경한다.)
 		System.out.println("수정할 회원의 아이디를 입력하세요 : ");
 		String userId = sc.nextLine();
-		int num = -1;
+		int num = 0;
 		for (int i = 0; i < ctn; i++) {
 			if (userId.equals(m[i].getUserId())) {
-				num++;
+				break;
 
-			}
+			}num++;
 
 		}
 		if (num >= 0) {
@@ -225,12 +224,14 @@ public class MemberManager {
 	public void printAllMember() {
 		// 반복문을 이용하여 ctn까지의 모든 인덱스의 객체 정보를 getter를 통해 출력시키는 메소드
 		for (int i = 0; i < ctn; i++) {
+			System.out.println("================");
 			System.out.println("아이디 : "+m[i].getUserId());
 			System.out.println("비밀번호 : "+m[i].getUserPwd());
 			System.out.println("이름 : "+m[i].getUserName());
 			System.out.println("나이 : "+m[i].getAge());
 			System.out.println("성별 : "+m[i].getGender());
 			System.out.println("이메일 : "+m[i].getEmail());
+			System.out.println("================");
 		}
 
 	}

@@ -182,25 +182,32 @@ public class MemberManager {
 		// 탈퇴할 회원이 없는 경우 "삭제할 회원 정보가 존재하지 않습니다." 출력
 		// 삭제가 성공적으로 된 경우 ctn을 1 감소시킴
 		System.out.println("탈퇴할 회원의 아이디를 입력하세요 : ");
-		String delete = sc.nextLine();
+		String delete = sc.next();
 		int i  ;
 		int num = 0 ;
 		for(i = 0; i<ctn; i++) {
-			if(delete.equals(m[i].getUserId())) {
-				num = i;
-			}else {
-				System.out.println("삭제할 회원 정보가 존재하지 않습니다.");
-				return;
-			}
-		}
-		for(int j = num ; j<ctn; j++) {
-			if(m[j]!=m[ctn]) {
-				m[j] = m[j+1];
+			if((m[i].getUserId().equals(delete))) {
+				
+				for(int j = i ; j<ctn; j++) {
+					if(m[j]!=m[ctn-1]) {
+						m[j] = m[j+1];
+						
+					}
+					
+				}
+				m[ctn-1] = null;
+				ctn--;
+				num +=1;
+				System.out.println("삭제완료");
 			}
 			
+		
+		
 		}
-		m[ctn-1] = null;
-		ctn--;
+		if(num==0) {
+			System.out.println("삭제할 회원의 아이디가 없습니다.");
+		}
+		
 		
 		
 

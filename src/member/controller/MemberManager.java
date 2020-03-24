@@ -20,7 +20,7 @@ public class MemberManager {
 		// 입력 받은 정보를 Member클래스의 매개변수 있는 생성자를 사용해 객체 생성 후 배열에 저장
 		// 인덱스와 회원수 증가시킴
 		// "입력이 완료되었습니다. 메인 메뉴로 돌아갑니다." 출력 후 메인메뉴로 돌아감
-
+		
 		System.out.println("아이디 입력 : ");
 		String userId = sc.nextLine();
 		System.out.println("패스워드 입력 : ");

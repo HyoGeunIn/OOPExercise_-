@@ -54,7 +54,10 @@ public class MemberManager {
 		
 		for (int i = 0; i < ctn; i++) {
 			if (userId.equals(m[i].getUserId())) {
-				System.out.println("정보 ㅇㅋㅇㅋ");
+				printOne(m[i]);
+			}else {
+				System.out.println("검색한 회원 정보가 존재하지 않습니다.");
+				return;
 			}
 
 		}
@@ -68,7 +71,10 @@ public class MemberManager {
 		String userName = sc.nextLine();
 		for (int i = 0; i < ctn; i++) {
 			if (userName.equals(m[i].getUserName())) {
-				System.out.println("정보 ㅇㅋㅇㅋ");
+				printOne(m[i]);
+			}else {
+				System.out.println("검색한 회원 정보가 존재하지 않습니다.");
+				return;
 			}
 
 		}
@@ -80,7 +86,10 @@ public class MemberManager {
 		String userEmail = sc.nextLine();
 		for (int i = 0; i < ctn; i++) {
 			if (userEmail.equals(m[i].getEmail())) {
-				System.out.println("정보 ㅇㅋㅇㅋ");
+				printOne(m[i]);
+			}else {
+				System.out.println("검색한 회원 정보가 존재하지 않습니다.");
+				return;
 			}
 
 		}
@@ -174,7 +183,26 @@ public class MemberManager {
 		// 탈퇴할 회원이 없는 경우 "삭제할 회원 정보가 존재하지 않습니다." 출력
 		// 삭제가 성공적으로 된 경우 ctn을 1 감소시킴
 		System.out.println("탈퇴할 회원의 아이디를 입력하세요 : ");
-		String delete
+		String delete = sc.nextLine();
+		int i  ;
+		int num = 0 ;
+		for(i = 0; i<ctn; i++) {
+			if(delete.equals(m[i].getUserId())) {
+				num = i;
+			}else {
+				System.out.println("삭제할 회원 정보가 존재하지 않습니다.");
+				return;
+			}
+		}
+		for(int j = num ; j<ctn; j++) {
+			if(m[j]!=m[ctn]) {
+				m[j] = m[j+1];
+			}
+			
+		}
+		m[ctn-1] = null;
+		ctn--;
+		
 		
 
 	}
@@ -210,6 +238,14 @@ public class MemberManager {
 	public void printOne(Member m) {
 		// 출력시킬 Member객체를 전달받아, 해당 객체의 getter를 이용하여 전달받은 객체 정보를 출력함
 		//내일하자
+		
+		System.out.println("이름 : "+m.getUserName());
+		System.out.println("아이디 : "+m.getUserId());
+		System.out.println("비밀번호 : "+m.getUserPwd());
+			System.out.println("나이 : "+m.getAge());
+			System.out.println("성별 : "+m.getGender());
+			System.out.println("이메일 : "+m.getEmail());
+		
 	}
 
 	public static void main(String[] args) {
